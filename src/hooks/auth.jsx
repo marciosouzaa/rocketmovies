@@ -10,11 +10,11 @@ function AuthProvider({ children }) {
     async function signIn({ email, password }) {
 
         try {
-            const res = await api.post("/sessions", { email, password })
-            const { user, token } = res.data;
+            const response = await api.post("/sessions", { email, password })
+            const { user, token } = response.data;
 
-            localStorage.setItem("@rocketMovies:user", JSON.stringify(user))
-            localStorage.setItem("@rocketMovies:token", token)
+            localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
+            localStorage.setItem("@rocketnotes:token", token)
 
             api.defaults.headers.authorization = `Bearer ${token}`;
             setData({ user, token })
@@ -29,8 +29,8 @@ function AuthProvider({ children }) {
     }
 
     function signOut() {
-        localStorage.removeItem("@rocketMovies:token");
-        localStorage.removeItem("@rocketMovies:user");
+        localStorage.removeItem("@rocketnotes:token");
+        localStorage.removeItem("@rocketnotes:user");
 
         setData({});
     }
@@ -43,13 +43,13 @@ function AuthProvider({ children }) {
                 const fileUploadForm = new FormData();
                 fileUploadForm.append("avatar", avatarFile);
 
-                const res = await api.patch("/users/avatar", fileUploadForm);
-                user.avatar = res.data.avatar;
+                const response = await api.patch("/users/avatar", fileUploadForm);
+                user.avatar = response.data.avatar;
 
             }
 
             await api.put("/users", user);
-            localStorage.setItem("@rocketMovies:user", JSON.stringify(user));
+            localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
 
             setData({ user, token: data.token });
             alert("Perfil Atualizado!");
@@ -64,8 +64,8 @@ function AuthProvider({ children }) {
     }
 
     useEffect(() => {
-        const token = localStorage.getItem("@rocketMovies:token");
-        const user = localStorage.getItem("@rocketMovies:user");
+        const token = localStorage.getItem("@rocketnotes:token");
+        const user = localStorage.getItem("@rocketnotes:user");
 
         if (token && user) {
             api.defaults.headers.authorization = `Bearer ${token}`;
