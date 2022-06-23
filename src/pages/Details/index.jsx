@@ -62,17 +62,22 @@ export function Details({...rest}){
       <Content className='main' >
       <SectionBack ></SectionBack>
 
+        <div className="movieRatingX">
+
         
         <div className="movieRating">
           <h1>{data.title}</h1>
-        <h2>
-        <FiStar className={data.rating >= 1 ? "rated" : ""} />
-        <FiStar className={data.rating >= 2 ? "rated" : ""} />
-        <FiStar className={data.rating >= 3 ? "rated" : ""} />
-        <FiStar className={data.rating >= 4 ? "rated" : ""} />
-        <FiStar className={data.rating >= 5 ? "rated" : ""} />
-      </h2>
+          <h2>
+            <FiStar className={data.rating >= 1 ? "rated" : ""} />
+            <FiStar className={data.rating >= 2 ? "rated" : ""} />
+            <FiStar className={data.rating >= 3 ? "rated" : ""} />
+            <FiStar className={data.rating >= 4 ? "rated" : ""} />
+            <FiStar className={data.rating >= 5 ? "rated" : ""} />
+          </h2>
         </div>
+          <FiX onClick={ handleRemove } />
+          </div>
+
         <Author>
           <img src={avatarUrl} alt={user.name} width="20" />
           Por  <span> {user.name} </span>

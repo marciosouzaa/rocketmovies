@@ -20,7 +20,7 @@ export function Note({data, ...rest}){
   
   return(
     <Container {...rest}>
-      <h1>{data.title} <FiX onClick={ handleRemove } /></h1>
+      <h1>{data.title} </h1>
 
       {/* <Author>
         <img src={avatarUrl} alt={user.name} width="20" />

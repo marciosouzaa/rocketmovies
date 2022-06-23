@@ -13,7 +13,7 @@ export const Container = styled.div`
 
     .movieRating{
       display: flex;
-
+      height: fit-content;
       gap: 20px;
 
       h1{
@@ -27,6 +27,47 @@ export const Container = styled.div`
       }
       .rated {
             fill:  ${({ theme }) => theme.COLORS.ORANGE};
+        }
+
+        > svg {
+          background-color: ${({ theme }) => theme.COLORS.ORANGE};
+        color: red;
+        width: 70px;
+        height: 30px;
+        cursor: pointer;
+        transition: all 300ms;
+        left: 50px;
+        border-radius: 5px
+        
+        }
+
+        > svg:hover {
+            transform: scale(1.2);            
+            color: red;
+            opacity: 0.7;
+        }
+    }
+    .movieRatingX{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      > svg {
+          background-color: ${({ theme }) => theme.COLORS.ORANGE};
+        color: red;
+        width: 70px;
+        height: 30px;
+        cursor: pointer;
+        transition: all 300ms;
+        left: 50px;
+        border-radius: 5px
+        
+        }
+
+        > svg:hover {
+            transform: scale(1.05);            
+            color: red;
+            opacity: 0.7;
         }
     }
     
