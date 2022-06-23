@@ -49,7 +49,7 @@ export function New(){
       return alert("Digite a descrição")
     }
 
-    if(newTag==""){
+    if(newTag=="" && tags==""){
       return alert('Digite a tag Lucas')
     }
     if(newTag){
