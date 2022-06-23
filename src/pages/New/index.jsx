@@ -48,6 +48,10 @@ export function New(){
     if(!description || description==""){
       return alert("Digite a descrição")
     }
+
+    if(newTag==""){
+      return alert('Digite a tag Lucas')
+    }
     if(newTag){
       return alert('Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio')
     }
