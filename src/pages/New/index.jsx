@@ -64,7 +64,7 @@ export function New(){
     navigate('/')
   }
   async function handleRemoveNote(){
-    navigate('/new')
+    navigate('/')
   }
 
   return(
@@ -98,8 +98,8 @@ export function New(){
 
             </div>
           </section>
-          <div className="buttons" onClick={handleRemoveNote}>
-            <button className="buttonDelete" title='Excluir filme'>Excluir filme</button>
+          <div className="buttons" >
+            <button className="buttonDelete" title='Excluir filme' onClick={handleRemoveNote} >Não adicionar filme</button>
           <Button title="Adicionar filme" onClick={handleNewNote} ></Button>
             </div>    
         </Form>
